@@ -1,0 +1,556 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A0BEAC22-267B-40CD-B17C-A08CE512766E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>frame3sharp</RootNamespace>
+    <AssemblyName>frame3sharp</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DefineConstants>F3_NO_VR_SUPPORT</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UnityEditor">
+      <HintPath>..\Unity\UnityEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>..\Unity\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AnimationModule">
+      <HintPath>..\Unity\UnityEngine.AnimationModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AudioModule">
+      <HintPath>..\Unity\UnityEngine.AudioModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\Unity\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ImageConversionModule">
+      <HintPath>..\Unity\UnityEngine.ImageConversionModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>..\Unity\UnityEngine.IMGUIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule">
+      <HintPath>..\Unity\UnityEngine.InputLegacyModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Physics2DModule">
+      <HintPath>..\Unity\UnityEngine.Physics2DModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule">
+      <HintPath>..\Unity\UnityEngine.PhysicsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ScreenCaptureModule">
+      <HintPath>..\Unity\UnityEngine.ScreenCaptureModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SharedInternalsModule">
+      <HintPath>..\Unity\UnityEngine.SharedInternalsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TextCoreModule">
+      <HintPath>..\Unity\UnityEngine.TextCoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>..\Unity\UnityEngine.TextRenderingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIElementsModule">
+      <HintPath>..\Unity\UnityEngine.UIElementsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIModule">
+      <HintPath>..\Unity\UnityEngine.UIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VRModule">
+      <HintPath>..\Unity\UnityEngine.VRModule.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="animation\AnimatedDismissHUDItem.cs" />
+    <Compile Include="animation\AnimatedDisplayHUDItem.cs" />
+    <Compile Include="animation\AnimatedShowHideHUDItem.cs" />
+    <Compile Include="animation\CameraAnimator.cs" />
+    <Compile Include="animation\FlyAwayAnimator.cs" />
+    <Compile Include="animation\GenericAnimator.cs" />
+    <Compile Include="animation\KeyframeSequence.cs" />
+    <Compile Include="animation\TweenAnimator.cs" />
+    <Compile Include="animation\UnityAnimation.cs" />
+    <Compile Include="behaviors\DismissPopupBehavior.cs" />
+    <Compile Include="behaviors\GamepadDeselectBehavior.cs" />
+    <Compile Include="behaviors\GamepadMultiSelectBehavior.cs" />
+    <Compile Include="behaviors\GenericClickDragBehaviors.cs" />
+    <Compile Include="behaviors\InputBehavior.cs" />
+    <Compile Include="behaviors\InputBehaviorSet.cs" />
+    <Compile Include="behaviors\InputState.cs" />
+    <Compile Include="behaviors\Mouse2DCockpitUIBehavior.cs" />
+    <Compile Include="behaviors\MouseBehaviors.cs" />
+    <Compile Include="behaviors\MouseClickDragSuperBehavior.cs" />
+    <Compile Include="behaviors\MouseDeselectBehavior.cs" />
+    <Compile Include="behaviors\MouseMultiSelectBehavior.cs" />
+    <Compile Include="behaviors\MouseViewManipBehavior.cs" />
+    <Compile Include="behaviors\MouseWheelRegionBehavior.cs" />
+    <Compile Include="behaviors\MouseWheelZoomBehavior.cs" />
+    <Compile Include="behaviors\ScreenCaptureBehavior.cs" />
+    <Compile Include="behaviors\SpatialDeviceDeselectBehavior.cs" />
+    <Compile Include="behaviors\SpatialDeviceGrabBehavior.cs" />
+    <Compile Include="behaviors\SpatialDeviceGrabViewBehavior.cs" />
+    <Compile Include="behaviors\SpatialDeviceMultiSelectBehavior.cs" />
+    <Compile Include="behaviors\SpatialDeviceViewManipBehavior.cs" />
+    <Compile Include="behaviors\StandardBehaviors.cs" />
+    <Compile Include="behaviors\Touch2DCockpitUIBehavior.cs" />
+    <Compile Include="behaviors\TouchUIBehavior.cs" />
+    <Compile Include="behaviors\TouchViewManipBehavior.cs" />
+    <Compile Include="behaviors\TwoHandViewManipBehavior.cs" />
+    <Compile Include="behaviors\UndoShortcutBehavior.cs" />
+    <Compile Include="behaviors\VRGamepadUIBehavior.cs" />
+    <Compile Include="behaviors\VRMouseUIBehavior.cs" />
+    <Compile Include="behaviors\VRSpatialDeviceUIBehavior.cs" />
+    <Compile Include="Cockpit.cs" />
+    <Compile Include="CoreTypes.cs" />
+    <Compile Include="EventSystem\EventData\AxisEventData.cs" />
+    <Compile Include="EventSystem\EventData\BaseEventData.cs" />
+    <Compile Include="EventSystem\EventData\PointerEventData.cs" />
+    <Compile Include="EventSystem\EventHandle.cs" />
+    <Compile Include="EventSystem\EventInterfaces.cs" />
+    <Compile Include="EventSystem\EventSystem.cs" />
+    <Compile Include="EventSystem\EventTrigger.cs" />
+    <Compile Include="EventSystem\EventTriggerType.cs" />
+    <Compile Include="EventSystem\ExecuteEvents.cs" />
+    <Compile Include="EventSystem\InputModules\BaseInput.cs" />
+    <Compile Include="EventSystem\InputModules\BaseInputModule.cs" />
+    <Compile Include="EventSystem\InputModules\PointerInputModule.cs" />
+    <Compile Include="EventSystem\InputModules\StandaloneInputModule.cs" />
+    <Compile Include="EventSystem\InputModules\TouchInputModule.cs" />
+    <Compile Include="EventSystem\MoveDirection.cs" />
+    <Compile Include="EventSystem\RaycasterManager.cs" />
+    <Compile Include="EventSystem\Raycasters\BaseRaycaster.cs" />
+    <Compile Include="EventSystem\Raycasters\Physics2DRaycaster.cs" />
+    <Compile Include="EventSystem\Raycasters\PhysicsRaycaster.cs" />
+    <Compile Include="EventSystem\RaycastResult.cs" />
+    <Compile Include="EventSystem\UIBehaviour.cs" />
+    <Compile Include="FContext.cs" />
+    <Compile Include="FPlatform.cs" />
+    <Compile Include="FScene.cs" />
+    <Compile Include="GameObjectSet.cs" />
+    <Compile Include="history\ChangeHistory.cs" />
+    <Compile Include="history\CurveChanges.cs" />
+    <Compile Include="history\DMeshSOChanges.cs" />
+    <Compile Include="history\SceneChanges.cs" />
+    <Compile Include="ICursorController.cs" />
+    <Compile Include="indicators\BasicIndicators.cs" />
+    <Compile Include="indicators\BrushIndicators.cs" />
+    <Compile Include="indicators\IndicatorFactory.cs" />
+    <Compile Include="indicators\IndicatorSet.cs" />
+    <Compile Include="indicators\SOIndicatorSet.cs" />
+    <Compile Include="indicators\ToolIndicatorSet.cs" />
+    <Compile Include="InputExtension.cs" />
+    <Compile Include="layout\BoxContainer.cs" />
+    <Compile Include="layout\BoxModel.cs" />
+    <Compile Include="layout\ILayout.cs" />
+    <Compile Include="layout\ILayoutSolver.cs" />
+    <Compile Include="layout\LayoutUtil.cs" />
+    <Compile Include="layout\PinnedBoxesLayout.cs" />
+    <Compile Include="layout\PinnedBoxesLayoutSolver.cs" />
+    <Compile Include="layout\SurfaceBoxRegions.cs" />
+    <None Include="placeholder\Unity.cs" />
+    <Compile Include="placeholder\TextLabelGenerator.cs" />
+    <Compile Include="platform\AutoGameObject.cs" />
+    <Compile Include="platform\fCamera.cs" />
+    <Compile Include="platform\fCurveGameObject.cs" />
+    <Compile Include="platform\fDimension.cs" />
+    <Compile Include="platform\fGameObject.cs" />
+    <Compile Include="platform\fGameObjectFactory.cs" />
+    <Compile Include="platform\fGameObjectPool.cs" />
+    <Compile Include="platform\fGraph.cs" />
+    <Compile Include="platform\fLineGameObjects.cs" />
+    <Compile Include="platform\fMaterial.cs" />
+    <Compile Include="platform\fMesh.cs" />
+    <Compile Include="platform\fMeshMaterial.cs" />
+    <Compile Include="platform\FPlatformUI.cs" />
+    <Compile Include="platform\fPosition.cs" />
+    <Compile Include="platform\FResources.cs" />
+    <Compile Include="platform\fText.cs" />
+    <Compile Include="platform\fTextGameObject.cs" />
+    <Compile Include="platform\fTubeMaterial.cs" />
+    <Compile Include="platform\NoVRPlatform.cs" />
+    <Compile Include="platform\ThreadMailbox.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SceneGraphConfig.cs" />
+    <Compile Include="sceneObjects\BaseSO.cs" />
+    <Compile Include="sceneObjects\BoxSO.cs" />
+    <Compile Include="sceneObjects\ConstrainedPivotSO.cs" />
+    <Compile Include="sceneObjects\CylinderSO.cs" />
+    <Compile Include="sceneObjects\DMeshSO.cs" />
+    <Compile Include="sceneObjects\GOWrapperSO.cs" />
+    <Compile Include="sceneObjects\GroupSO.cs" />
+    <Compile Include="sceneObjects\MeshReferenceSO.cs" />
+    <Compile Include="sceneObjects\MeshSO.cs" />
+    <Compile Include="sceneObjects\ParameterSet.cs" />
+    <Compile Include="sceneObjects\PivotSO.cs" />
+    <Compile Include="sceneObjects\PolyCurveSO.cs" />
+    <Compile Include="sceneObjects\PolyTubeSO.cs" />
+    <Compile Include="sceneObjects\PrimitiveSO.cs" />
+    <Compile Include="sceneObjects\SceneObject.cs" />
+    <Compile Include="sceneObjects\SOFrameLink.cs" />
+    <Compile Include="sceneObjects\SOLink.cs" />
+    <Compile Include="sceneObjects\SOLinkManager.cs" />
+    <Compile Include="sceneObjects\SOMaterial.cs" />
+    <Compile Include="sceneObjects\SOMeshMaterial.cs" />
+    <Compile Include="sceneObjects\SORegistry.cs" />
+    <Compile Include="sceneObjects\SphereSO.cs" />
+    <Compile Include="sceneObjects\TransientGroupSO.cs" />
+    <Compile Include="sceneObjects\TransientXFormSO.cs" />
+    <Compile Include="SceneOptions.cs" />
+    <Compile Include="scripts\AddExistingGOToScene.cs" />
+    <Compile Include="scripts\AddExistingMeshToScene.cs" />
+    <Compile Include="scripts\BaseSceneConfig.cs" />
+    <Compile Include="serialization\SceneMeshExporter.cs" />
+    <Compile Include="serialization\SceneMeshImporter.cs" />
+    <Compile Include="serialization\SceneSerializer.cs" />
+    <Compile Include="serialization\SceneSerializerEmitTypes.cs" />
+    <Compile Include="serialization\SOFactory.cs" />
+    <Compile Include="serialization\XMLInputStream.cs" />
+    <Compile Include="serialization\XMLOutputStream.cs" />
+    <Compile Include="setup\MessageStream.cs" />
+    <Compile Include="setup\SceneLightingSetup.cs" />
+    <Compile Include="SpatialInputController.cs" />
+    <Compile Include="SystemMouseCursorController.cs" />
+    <Compile Include="tools\BaseSingleClickTool.cs" />
+    <Compile Include="tools\BaseSurfacePointTool.cs" />
+    <Compile Include="tools\CurveSelectFacesTool.cs" />
+    <Compile Include="tools\DrawPrimitivesTool.cs" />
+    <Compile Include="tools\DrawSpaceCurveTool.cs" />
+    <Compile Include="tools\DrawSurfaceCurveTool.cs" />
+    <Compile Include="tools\SculptCurveTool.cs" />
+    <Compile Include="tools\SurfaceBrushTool.cs" />
+    <Compile Include="tools\Tool.cs" />
+    <Compile Include="tools\ToolManager.cs" />
+    <Compile Include="TouchMouseCursorController.cs" />
+    <Compile Include="TransformManager.cs" />
+    <Compile Include="UIElements\BaseSceneUIElement.cs" />
+    <Compile Include="UIElements\HUDBuilder.cs" />
+    <Compile Include="UIElements\HUDButton.cs" />
+    <Compile Include="UIElements\HUDChildren.cs" />
+    <Compile Include="UIElements\HUDCollection.cs" />
+    <Compile Include="UIElements\HUDElementLayout.cs" />
+    <Compile Include="UIElements\HUDElementList.cs" />
+    <Compile Include="UIElements\HUDInterfaces.cs" />
+    <Compile Include="UIElements\HUDLabel.cs" />
+    <Compile Include="UIElements\HUDMultiLineLabel.cs" />
+    <Compile Include="UIElements\HUDPanel.cs" />
+    <Compile Include="UIElements\HUDPopupDialog.cs" />
+    <Compile Include="UIElements\HUDPopupMessage.cs" />
+    <Compile Include="UIElements\HUDProgressBase.cs" />
+    <Compile Include="UIElements\HUDRadialMenu.cs" />
+    <Compile Include="UIElements\HUDRadialProgress.cs" />
+    <Compile Include="UIElements\HUDSecureTextEntry.cs" />
+    <Compile Include="UIElements\HUDShape.cs" />
+    <Compile Include="UIElements\HUDShapeElement.cs" />
+    <Compile Include="UIElements\HUDSliderBase.cs" />
+    <Compile Include="UIElements\HUDSpacer.cs" />
+    <Compile Include="UIElements\HUDStandardItem.cs" />
+    <Compile Include="UIElements\HUDStyling.cs" />
+    <Compile Include="UIElements\HUDSurface.cs" />
+    <Compile Include="UIElements\HUDTextEntry.cs" />
+    <Compile Include="UIElements\HUDToast.cs" />
+    <Compile Include="UIElements\HUDToggleButton.cs" />
+    <Compile Include="UIElements\HUDToggleGroup.cs" />
+    <Compile Include="UIElements\HUDUIDefaults.cs" />
+    <Compile Include="UIElements\HUDUtil.cs" />
+    <Compile Include="UIElements\SceneUIElement.cs" />
+    <Compile Include="UI\Animation\CoroutineTween.cs" />
+    <Compile Include="UI\Core\AnimationTriggers.cs" />
+    <Compile Include="UI\Core\Button.cs" />
+    <Compile Include="UI\Core\CanvasUpdateRegistry.cs" />
+    <Compile Include="UI\Core\ColorBlock.cs" />
+    <Compile Include="UI\Core\Culling\ClipperRegistry.cs" />
+    <Compile Include="UI\Core\Culling\Clipping.cs" />
+    <Compile Include="UI\Core\Culling\IClipRegion.cs" />
+    <Compile Include="UI\Core\Culling\RectangularVertexClipper.cs" />
+    <Compile Include="UI\Core\DefaultControls.cs" />
+    <Compile Include="UI\Core\Dropdown.cs" />
+    <Compile Include="UI\Core\FontData.cs" />
+    <Compile Include="UI\Core\FontUpdateTracker.cs" />
+    <Compile Include="UI\Core\Graphic.cs" />
+    <Compile Include="UI\Core\GraphicRaycaster.cs" />
+    <Compile Include="UI\Core\GraphicRebuildTracker.cs" />
+    <Compile Include="UI\Core\GraphicRegistry.cs" />
+    <Compile Include="UI\Core\IGraphicEnabledDisabled.cs" />
+    <Compile Include="UI\Core\Image.cs" />
+    <Compile Include="UI\Core\IMask.cs" />
+    <Compile Include="UI\Core\IMaskable.cs" />
+    <Compile Include="UI\Core\InputField.cs" />
+    <Compile Include="UI\Core\Layout\AspectRatioFitter.cs" />
+    <Compile Include="UI\Core\Layout\CanvasScaler.cs" />
+    <Compile Include="UI\Core\Layout\ContentSizeFitter.cs" />
+    <Compile Include="UI\Core\Layout\GridLayoutGroup.cs" />
+    <Compile Include="UI\Core\Layout\HorizontalLayoutGroup.cs" />
+    <Compile Include="UI\Core\Layout\HorizontalOrVerticalLayoutGroup.cs" />
+    <Compile Include="UI\Core\Layout\ILayoutElement.cs" />
+    <Compile Include="UI\Core\Layout\LayoutElement.cs" />
+    <Compile Include="UI\Core\Layout\LayoutGroup.cs" />
+    <Compile Include="UI\Core\Layout\LayoutRebuilder.cs" />
+    <Compile Include="UI\Core\Layout\LayoutUtility.cs" />
+    <Compile Include="UI\Core\Layout\VerticalLayoutGroup.cs" />
+    <Compile Include="UI\Core\Mask.cs" />
+    <Compile Include="UI\Core\MaskableGraphic.cs" />
+    <Compile Include="UI\Core\MaskUtilities.cs" />
+    <Compile Include="UI\Core\MaterialModifiers\IMaterialModifier.cs" />
+    <Compile Include="UI\Core\Misc.cs" />
+    <Compile Include="UI\Core\Navigation.cs" />
+    <Compile Include="UI\Core\RawImage.cs" />
+    <Compile Include="UI\Core\RectMask2D.cs" />
+    <Compile Include="UI\Core\Scrollbar.cs" />
+    <Compile Include="UI\Core\ScrollRect.cs" />
+    <Compile Include="UI\Core\Selectable.cs" />
+    <Compile Include="UI\Core\SetPropertyUtility.cs" />
+    <Compile Include="UI\Core\Slider.cs" />
+    <Compile Include="UI\Core\SpecializedCollections\IndexedSet.cs" />
+    <Compile Include="UI\Core\SpriteState.cs" />
+    <Compile Include="UI\Core\StencilMaterial.cs" />
+    <Compile Include="UI\Core\Text.cs" />
+    <Compile Include="UI\Core\Toggle.cs" />
+    <Compile Include="UI\Core\ToggleGroup.cs" />
+    <Compile Include="UI\Core\Utility\ListPool.cs" />
+    <Compile Include="UI\Core\Utility\ObjectPool.cs" />
+    <Compile Include="UI\Core\Utility\ReflectionMethodsCache.cs" />
+    <Compile Include="UI\Core\Utility\VertexHelper.cs" />
+    <Compile Include="UI\Core\VertexModifiers\BaseMeshEffect.cs" />
+    <Compile Include="UI\Core\VertexModifiers\IMeshModifier.cs" />
+    <Compile Include="UI\Core\VertexModifiers\Outline.cs" />
+    <Compile Include="UI\Core\VertexModifiers\PositionAsUV1.cs" />
+    <Compile Include="UI\Core\VertexModifiers\Shadow.cs" />
+    <Compile Include="unity\Editor\PrependBlendModeShaderGUI.cs" />
+    <Compile Include="unity\HUDUtil_Unity.cs" />
+    <Compile Include="unity\scripts\f3UnityCanvasScaler.cs" />
+    <Compile Include="unity\scripts\UnityIdler.cs" />
+    <Compile Include="unity\UnityCurveRenderer.cs" />
+    <Compile Include="unity\UnityLineRender_GL.cs" />
+    <Compile Include="unity\UnitySceneUtil.cs" />
+    <Compile Include="unity\UnitySOMaterial.cs" />
+    <None Include="unity\UnityUIDialogBase.cs" />
+    <None Include="unity\UnityUIUtil.cs" />
+    <Compile Include="util\ActionSet.cs" />
+    <Compile Include="util\BasicCameraGrid.cs" />
+    <Compile Include="util\BasicSceneGrid.cs" />
+    <Compile Include="util\BoxedTypes.cs" />
+    <Compile Include="util\ColorUtil.cs" />
+    <Compile Include="util\CurvePreview.cs" />
+    <Compile Include="util\DebugUtil.cs" />
+    <Compile Include="util\FUtil.cs" />
+    <Compile Include="util\LocalCurvePreview.cs" />
+    <Compile Include="util\MaterialUtil.cs" />
+    <Compile Include="util\MeshGenerators.cs" />
+    <Compile Include="util\MeshPrimitivePreview.cs" />
+    <Compile Include="util\PreRenderHelper.cs" />
+    <Compile Include="util\PrimitiveCache.cs" />
+    <Compile Include="util\SceneTransforms.cs" />
+    <Compile Include="util\SceneUtil.cs" />
+    <Compile Include="util\SOTargets.cs" />
+    <Compile Include="util\StableSurfaceFrame.cs" />
+    <Compile Include="util\StringValidators.cs" />
+    <Compile Include="util\ThreadingUtil.cs" />
+    <Compile Include="util\UniqueNames.cs" />
+    <Compile Include="util\UnityGameObjectExt.cs" />
+    <Compile Include="util\UnityUtil.cs" />
+    <Compile Include="util\ViewMeshManagers.cs" />
+    <Compile Include="util\VRUtil.cs" />
+    <Compile Include="view\CameraManipulator.cs" />
+    <Compile Include="view\CameraTracking.cs" />
+    <Compile Include="view\LinesEngine.cs" />
+    <Compile Include="view\StandardCameraInteractions.cs" />
+    <Compile Include="view\Teleporter.cs" />
+    <Compile Include="VRMouseCursorController.cs" />
+    <Compile Include="widgets\AxisRotationWidget.cs" />
+    <Compile Include="widgets\AxisTransformGizmo.cs" />
+    <Compile Include="widgets\AxisTranslationWidget.cs" />
+    <Compile Include="widgets\BaseTransformGizmo.cs" />
+    <Compile Include="widgets\PlaneTranslationWidget.cs" />
+    <Compile Include="widgets\SurfaceConstrainedGizmo.cs" />
+    <Compile Include="widgets\SurfaceConstrainedPointWidget.cs" />
+    <Compile Include="widgets\TransformWrappers.cs" />
+    <Compile Include="widgets\UniformScaleWidget.cs" />
+    <Compile Include="widgets\Widget.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="docs\index.html" />
+    <Content Include="docs\web.txt" />
+    <Content Include="doc\layer_setup.png" />
+    <Content Include="doc\mouse_scrollwheel_input.png" />
+    <Content Include="doc\scripting_define_symbols.png" />
+    <Content Include="Plugins\x86\tinyfiledialogs.dll" />
+    <Content Include="Plugins\x86_64\tinyfiledialogs.dll" />
+    <Content Include="Resources\icons\cancel_v1.png" />
+    <Content Include="Resources\icons\export_v1.png" />
+    <Content Include="Resources\icons\f3_default_sprite.png" />
+    <Content Include="Resources\icons\frame_local_disabled.png" />
+    <Content Include="Resources\icons\frame_local_enabled.png" />
+    <Content Include="Resources\icons\frame_world_disabled.png" />
+    <Content Include="Resources\icons\frame_world_enabled.png" />
+    <Content Include="Resources\icons\hud_icons.svg" />
+    <Content Include="Resources\icons\import_v1.png" />
+    <Content Include="Resources\icons\load_v1.png" />
+    <Content Include="Resources\icons\new_v1.png" />
+    <Content Include="Resources\icons\quit_v1.png" />
+    <Content Include="Resources\icons\redo_v1.png" />
+    <Content Include="Resources\icons\reset_v1.png" />
+    <Content Include="Resources\icons\save_v1.png" />
+    <Content Include="Resources\icons\undo_v1.png" />
+    <Content Include="Resources\StandardMaterials\default_group_colors.png" />
+    <Content Include="Resources\StandardMaterials\images\checker1024.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="docs\CNAME" />
+    <None Include="docs\_config.yml" />
+    <None Include="Plugins\osx\tinyfiledialogs.bundle\Contents\Info.plist" />
+    <None Include="Plugins\osx\tinyfiledialogs.bundle\Contents\MacOS\tinyfiledialogs" />
+    <None Include="Plugins\osx\tinyfiledialogs.bundle\Contents\_CodeSignature\CodeResources" />
+    <None Include="Resources\icon_meshes\axis_frame.obj" />
+    <None Include="Resources\icon_meshes\axis_icons.mix" />
+    <None Include="Resources\icon_meshes\camera.mix" />
+    <None Include="Resources\icon_meshes\camera.obj" />
+    <None Include="Resources\icon_meshes\inverted_sphere_tiny.obj" />
+    <None Include="Resources\icon_meshes\Materials\defaultMat.mat" />
+    <None Include="Resources\icon_meshes\Materials\mmGroup0Mat.mat" />
+    <None Include="Resources\icon_meshes\Materials\mmGroup1Mat.mat" />
+    <None Include="Resources\icon_meshes\Materials\mmGroup2Mat.mat" />
+    <None Include="Resources\StandardMaterials\Checkerboard.mat" />
+    <None Include="Resources\StandardMaterials\Checkerboard.mat.meta" />
+    <None Include="Resources\StandardMaterials\default_group_colors.png.meta" />
+    <None Include="Resources\StandardMaterials\default_particle.mat" />
+    <None Include="Resources\StandardMaterials\default_particle.mat.meta" />
+    <None Include="Resources\StandardMaterials\default_standard.mat" />
+    <None Include="Resources\StandardMaterials\default_standard.mat.meta" />
+    <None Include="Resources\StandardMaterials\default_text_material.mat" />
+    <None Include="Resources\StandardMaterials\default_text_material.mat.meta" />
+    <None Include="Resources\StandardMaterials\default_tube_material.mat" />
+    <None Include="Resources\StandardMaterials\default_tube_material.mat.meta" />
+    <None Include="Resources\StandardMaterials\default_unlit_texture.mat" />
+    <None Include="Resources\StandardMaterials\default_unlit_texture.mat.meta" />
+    <None Include="Resources\StandardMaterials\default_unlit_texture_transparent.mat" />
+    <None Include="Resources\StandardMaterials\default_unlit_texture_transparent.mat.meta" />
+    <None Include="Resources\StandardMaterials\default_unlit_transparent.mat" />
+    <None Include="Resources\StandardMaterials\default_unlit_transparent.mat.meta" />
+    <None Include="Resources\StandardMaterials\default_vertex_colored.mat" />
+    <None Include="Resources\StandardMaterials\default_vertex_colored.mat.meta" />
+    <None Include="Resources\StandardMaterials\depth_write_only.mat" />
+    <None Include="Resources\StandardMaterials\depth_write_only.mat.meta" />
+    <None Include="Resources\StandardMaterials\drop_shadow_mat.mat" />
+    <None Include="Resources\StandardMaterials\drop_shadow_mat.mat.meta" />
+    <None Include="Resources\StandardMaterials\eyePlaneMat.mat" />
+    <None Include="Resources\StandardMaterials\eyePlaneMat.mat.meta" />
+    <None Include="Resources\StandardMaterials\f3ColoredUnlitAlpha.shader" />
+    <None Include="Resources\StandardMaterials\f3ColoredUnlitAlpha.shader.meta" />
+    <None Include="Resources\StandardMaterials\f3DepthWriteOnly.shader" />
+    <None Include="Resources\StandardMaterials\f3DepthWriteOnly.shader.meta" />
+    <None Include="Resources\StandardMaterials\f3DropShadow.shader" />
+    <None Include="Resources\StandardMaterials\f3DropShadow.shader.meta" />
+    <None Include="Resources\StandardMaterials\f3Font.shader" />
+    <None Include="Resources\StandardMaterials\f3Font.shader.meta" />
+    <None Include="Resources\StandardMaterials\f3StandardMeshShader.cginc" />
+    <None Include="Resources\StandardMaterials\f3StandardMeshShader.cginc.meta" />
+    <None Include="Resources\StandardMaterials\f3StandardMeshShader.shader" />
+    <None Include="Resources\StandardMaterials\f3StandardMeshShader.shader.meta" />
+    <None Include="Resources\StandardMaterials\f3StandardMeshShader_Shadow.cginc" />
+    <None Include="Resources\StandardMaterials\f3StandardMeshShader_Shadow.cginc.meta" />
+    <None Include="Resources\StandardMaterials\f3StandardVtxColor.shader" />
+    <None Include="Resources\StandardMaterials\f3StandardVtxColor.shader.meta" />
+    <None Include="Resources\StandardMaterials\f3TubeShader.shader" />
+    <None Include="Resources\StandardMaterials\f3TubeShader.shader.meta" />
+    <None Include="Resources\StandardMaterials\f3UnlitTextureTransparent.shader" />
+    <None Include="Resources\StandardMaterials\f3UnlitTextureTransparent.shader.meta" />
+    <None Include="Resources\StandardMaterials\f3VtxColor.cginc" />
+    <None Include="Resources\StandardMaterials\f3VtxColor.cginc.meta" />
+    <None Include="Resources\StandardMaterials\f3VtxColorFlatShaded.cginc" />
+    <None Include="Resources\StandardMaterials\f3VtxColorFlatShaded.cginc.meta" />
+    <None Include="Resources\StandardMaterials\f3VtxColorFlatShaded.shader" />
+    <None Include="Resources\StandardMaterials\f3VtxColorFlatShaded.shader.meta" />
+    <None Include="Resources\StandardMaterials\flat_vertex_colored.mat" />
+    <None Include="Resources\StandardMaterials\flat_vertex_colored.mat.meta" />
+    <None Include="Resources\StandardMaterials\groundPlaneMaterial.mat" />
+    <None Include="Resources\StandardMaterials\groundPlaneMaterial.mat.meta" />
+    <None Include="Resources\StandardMaterials\groundPlane_backside.mat" />
+    <None Include="Resources\StandardMaterials\groundPlane_backside.mat.meta" />
+    <None Include="Resources\StandardMaterials\images.meta" />
+    <None Include="Resources\StandardMaterials\line_shaders.meta" />
+    <None Include="Resources\StandardMaterials\line_shaders\f3GLLine_DepthTest.shader" />
+    <None Include="Resources\StandardMaterials\line_shaders\f3GLLine_DepthTest.shader.meta" />
+    <None Include="Resources\StandardMaterials\line_shaders\f3GLLine_NoDepthTest.shader" />
+    <None Include="Resources\StandardMaterials\line_shaders\f3GLLine_NoDepthTest.shader.meta" />
+    <None Include="Resources\StandardMaterials\line_shaders\gl_line_depth_test.mat" />
+    <None Include="Resources\StandardMaterials\line_shaders\gl_line_depth_test.mat.meta" />
+    <None Include="Resources\StandardMaterials\line_shaders\gl_line_no_depth_test.mat" />
+    <None Include="Resources\StandardMaterials\line_shaders\gl_line_no_depth_test.mat.meta" />
+    <None Include="Resources\StandardMaterials\mouseColor.mat" />
+    <None Include="Resources\StandardMaterials\mouseColor.mat.meta" />
+    <None Include="Resources\StandardMaterials\red.mat" />
+    <None Include="Resources\StandardMaterials\red.mat.meta" />
+    <None Include="Resources\StandardMaterials\standard_mesh.mat" />
+    <None Include="Resources\StandardMaterials\standard_mesh.mat.meta" />
+    <None Include="Resources\StandardMaterials\standard_transparent.mat" />
+    <None Include="Resources\StandardMaterials\standard_transparent.mat.meta" />
+    <None Include="Resources\transform_gizmo\axisrotate_x.obj" />
+    <None Include="Resources\transform_gizmo\axisrotate_y.obj" />
+    <None Include="Resources\transform_gizmo\axisrotate_z.obj" />
+    <None Include="Resources\transform_gizmo\axis_translate_x.obj" />
+    <None Include="Resources\transform_gizmo\axis_translate_y.obj" />
+    <None Include="Resources\transform_gizmo\axis_translate_z.obj" />
+    <None Include="Resources\transform_gizmo\fixed_transform_gizmo.mix" />
+    <None Include="Resources\transform_gizmo\Materials\defaultMat.mat" />
+    <None Include="Resources\transform_gizmo\Materials\mmGroup0Mat.mat" />
+    <None Include="Resources\transform_gizmo\plane_translate_xy.obj" />
+    <None Include="Resources\transform_gizmo\plane_translate_xz.obj" />
+    <None Include="Resources\transform_gizmo\plane_translate_yz.obj" />
+    <None Include="Resources\transform_gizmo\uniform_scale.obj" />
+    <None Include="unity\Editor\frame3Sharp.Editor.asmdef" />
+    <None Include="unity\scripts\f3UnityCanvasScaler.cs.meta" />
+    <None Include="unity\scripts\UnityIdler.cs.meta" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="System.Numerics.Vectors">
+      <Version>4.5.0</Version>
+    </PackageReference>
+    <PackageReference Include="DoTween">
+      <Version>1.0.0</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\geometry3Sharp\geometry3Sharp.csproj">
+      <Project>{0c518dda-28fe-44ca-9ab0-f9773974f13a}</Project>
+      <Name>geometry3Sharp</Name>
+    </ProjectReference>
+    <PackageReference Include="UnityEngine">
+      <Version>2.0.1.2</Version>
+    </PackageReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
