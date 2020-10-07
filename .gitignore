@@ -37,3 +37,5 @@ sysinfo.txt
 !/Resources/StandardMaterials/defaults/*.meta
 !/unity/scripts/*.meta
 
+bin/
+obj/
